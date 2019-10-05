@@ -53,6 +53,4 @@ let arr1 = ['dog', 'chameleon', 'monkey'];
 let arr2 = ['bear', 'tiger', 'liger'];
 
 
-const combinedArrays = arr1.concat(arr2)
-
-//^^^ i know i didn't use spread here ill get back to that when I can
+const combinedArrays = [...arr1,...arr2]

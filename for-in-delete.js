@@ -39,15 +39,14 @@ for(var key in values) {
   Inside the function showValues, write a for in loop that concatenates each of the property values and returns the concatenated string.
 */
 
-
-function showValues( obj ) {
-  let result;
-  for (let key in obj) {
-    result = obj[key].concat(obj[key + 1])
-    }
-  return result
+let result 
+function showValues( obj, cb ) {
+  for (let key in obj){
+    result = obj[key]
+  }
+  return result.tostring()
 }
-showValues()
+
 
 
 ////////// PROBLEM 2 //////////
@@ -75,7 +74,12 @@ return obj
   Return the updated object.
 */
 
-//Code Here
+function double (obj){
+  for (let value in obj){
+  obj[value] = (obj[value] * 2)
+}
+  return obj
+}
 
 
 
@@ -89,7 +93,12 @@ return obj
   By the end of the for in loop, you should have a sentence, return that sentence.
 */
 
-//Code Here
+function secrets(obj){
+  // const emptyString = ''
+  //   for (let key in obj){
+  //     if 
+  // }
+}
 
 
 
