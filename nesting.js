@@ -50,7 +50,12 @@ var employees = [
     3. Return the updated employee array.
 */
 
-//Code Here
+// function employeeUpdater(){
+//   for (let i = 0; i < arr.length; i++){
+//     if()
+//   }
+// }
+
 
 
 
@@ -68,7 +73,15 @@ var workplaceAccidents = [12, 56, 44, 3, 29, 56, 56, 3, 7, 12];
     3. Return the updated array.
 */
 
-//Code Here
+function removeDuplicates(arr){
+  for (let i = workplaceAccidents.length -1; i >= 0; i--){
+    for (let j = i - 1; j >= 0; j--){
+      if (workplaceAccidents[i] === workplaceAccidents[j]){
+        workplaceAccidents.splice(i,1)
+      }
+    }
+  }return workplaceAccidents
+}
 
 
 
@@ -87,7 +100,7 @@ var cat = {
       activities: ['sleep', 'pre-sleep naps']
     }
   ]
-}
+};
 // Do not edit the code above.
 
 /*
@@ -97,8 +110,8 @@ var cat = {
 */
 
 //Code Here
-var grumpyActivity;
-var fluffy2ndFriend;
+var grumpyActivity = cat.catFriends[0].activities[1]
+var fluffy2ndFriend = cat.catFriends[1].name
 
 
 
@@ -137,8 +150,22 @@ var myCar = {
     2. Loop over the accidents array.
     3. Change atFaultForAccident from true to false.
 */
+function recordCleaner(){
+  for (let key in myCar){
+    if (key === 'accidents'){
+      for (let i =0; i < myCar[key].length;i++){
+        myCar[key][i].atFaultForAccident = false
+      }
+    }
+  } return myCar
+}
+    // for (i = 0; i <= myCar[accidents].length; i++){
+    //   if (myCar[accidents].length.i.atFaultForAccident === true);{
+    //     myCar[accidents].length.i.atFaultForAccident = false
+    //   }
+    // } 
 
-//Code Here
+
 
 
 
@@ -158,5 +185,9 @@ var numsArr = [ [1, 2, 3, 4], [5, 6], [7, 8, 9, 10, 11]];
 */
 
 //Code Here
+// function looper(){
+//   for (let i in numsArr){
+//     for (let j of numsArr[i]){
+      
 
-
+// for (i = 0; i <= numsArr.length; i++){

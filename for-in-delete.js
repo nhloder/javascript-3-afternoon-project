@@ -94,13 +94,15 @@ function double (obj){
 */
 
 function secrets(obj){
-  // const emptyString = ''
-  //   for (let key in obj){
-  //     if 
-  // }
+  let secretSentence = ''
+  
+  for (let key in obj){
+    if (key.startsWith('sh')) {
+      secretSentence += obj[key]
+    }
+  }
+  return secretSentence
 }
-
-
 
 /* 
   Sometimes it's needed to delete object properties. 

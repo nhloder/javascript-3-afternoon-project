@@ -11,7 +11,9 @@
 // Do not edit the code below.
 const mixedNumbers = [6,3,1,7,5,2,6,8,9,4,2,7,9,3,1,8,4,3];
 // Do not edit the code above.
-
+let even = function(num){
+  return num % 2 === 0;
+};
 /*
   Use the filter method on mixedNumbers to make a new array of just the even numbers.
 
@@ -20,10 +22,8 @@ const mixedNumbers = [6,3,1,7,5,2,6,8,9,4,2,7,9,3,1,8,4,3];
   (element, index, wholeArray)=>{}    Arrow Form
 */
 
-//Code Here
-let evenNumbers // = mixedNumbers.filter(/* Provide Your Callback Here */)
 
-
+let evenNumbers = mixedNumbers.filter(even);
 
 ////////// PROBLEM 2 //////////
 
@@ -43,8 +43,10 @@ const prices = [15.00, 23.00, 78.00, 34.00, 12.00, 86.00, 12.00, 79.00, 32.00];
   (element, index, wholeArray)=>{}    Arrow Form
 */
 
-//Code Here
-let postTaxPrices // = prices.map(/* Provide Your Callback Here );
+
+let postTaxPrices = prices.map(function mapper(el, i, arr){
+  return prices * 1.07
+})
 
 
 
@@ -62,8 +64,12 @@ const populations = [8175133, 3792621, 2695598, 2100263];
   (runningTotal, curElement, curIndex, wholeArray)=>{} Arrow Form
 */
 
-//Code Here
-let totalPopulation //  = populations.reduce(/* Provide Your Callback Here */)
+
+let totalPopulation = populations.reduce(function(acc,cur,idx,populations) {
+  return acc + cur
+})
+
+
 
 
 
@@ -89,8 +95,10 @@ const monstersInYourPocket = [{"monster":"Bulbabunny","CP":156},{"monster":"Bulb
 */
 
 //Code Here
-let myStrongest // = monstersInYourPocket.filter(/* Provide Your Callback Here */)
-
+var myStrongest = monstersInYourPocket.filter(monster => {
+  if (monster['CP'] > 200)
+  return monster
+})
 
 
 ////////// PROBLEM 5 //////////
@@ -106,7 +114,7 @@ const orders = [{"price":15,"tax":0.09},{"price":42,"tax":0.07},{"price":56,"tax
   Use a higher order method to get all the order totals after adding in the sales tax. Your answer should be an array of numbers, one total for each order.
 */
 
-let orderTotals // Code here
+let orderTotals = orders.map(order =>  order['price'] * (order['tax'] + 1))
 
 
 
@@ -126,6 +134,13 @@ const purchases = [{"owner":"Barry","price":103},{"owner":"Bob","price":75},
   Use a high order method to create to get the sum of bobsTotal.
 */
 
-let bobsTotal //Code Here
 
+let bobsTotal = purchases.reduce((acc, purchase) => {
+  if(purchase['owner'] === 'Bob'){
+    acc += purchase['price']
+  }
+  return acc
+}, 0)
 
+//all totals below
+purchases.reduce((acc, purchase) => acc += purchase.price , 0)
